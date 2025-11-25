@@ -1,0 +1,2 @@
+2025-11-25 14:39:55,070 - 40 - root - INFO - Initialized DataIngestion with DB: NetworkSecurity, collection: PhisingData
+2025-11-25 14:39:55,070 - 136 - root - INFO - Starting data ingestion process

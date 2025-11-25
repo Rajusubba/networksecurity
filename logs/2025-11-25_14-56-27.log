@@ -1,0 +1,4 @@
+2025-11-25 14:56:27,327 - 40 - root - INFO - Initialized DataIngestion with DB: NetworkSecurity, collection: phisingData
+2025-11-25 14:56:27,327 - 137 - root - INFO - Starting data ingestion process
+2025-11-25 14:56:30,101 - 66 - root - INFO - Exported collection 'phisingData' from DB 'NetworkSecurity' with shape (0, 0)
+2025-11-25 14:56:30,103 - 84 - root - INFO - Feature store file saved at: artifact/11_25_2025_14_56_27/data_ingestion/feature_store/phisingData.csv with shape (0, 0)
