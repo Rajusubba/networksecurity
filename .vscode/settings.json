@@ -1,4 +1,22 @@
 {
     "python-envs.defaultEnvManager": "ms-python.python:pyenv",
-    "python-envs.pythonProjects": []
+    "python-envs.pythonProjects": [],
+    "sqltools.connections": [
+        {
+            "mysqlOptions": {
+                "authProtocol": "xprotocol",
+                "enableSsl": "Disabled"
+            },
+            "ssh": "Disabled",
+            "previewLimit": 50,
+            "server": "localhost",
+            "port": 33060,
+            "driver": "MySQL",
+            "name": "MySql Local Server",
+            "database": "sakila",
+            "username": "root",
+            "password": "Mirak$11",
+            "connectionTimeout": 30
+        }
+    ]
 }

@@ -6,5 +6,7 @@ pymongo
 certifi
 ##mongodb@3.7
 scikit-learn
-
+scipy
+dill
+PyYAML
 ##-e .

@@ -1,0 +1,12 @@
+2025-12-02 11:32:11,428 - 25 - root - INFO - Initialized DataIngestion with DB: NetworkSecurity, collection: PhishingData
+2025-12-02 11:32:11,428 - 126 - root - INFO - Starting data ingestion process
+2025-12-02 11:32:11,428 - 41 - root - INFO - Using DB: NetworkSecurity
+2025-12-02 11:32:11,428 - 42 - root - INFO - Using collection: PhishingData
+2025-12-02 11:32:14,207 - 48 - root - INFO - Number of docs fetched from Mongo: 11055
+2025-12-02 11:32:14,258 - 74 - root - INFO - Saving feature-store file to: artifact/12_02_2025_11_32_11/data_ingestion/feature_store/phisingData.csv
+2025-12-02 11:32:14,292 - 97 - root - INFO - Performed train/test split on the dataframe
+2025-12-02 11:32:14,292 - 102 - root - INFO - Exporting train file to: artifact/12_02_2025_11_32_11/data_ingestion/ingested/train.csv
+2025-12-02 11:32:14,292 - 105 - root - INFO - Exporting test file to:  artifact/12_02_2025_11_32_11/data_ingestion/ingested/test.csv
+2025-12-02 11:32:14,328 - 144 - root - INFO - Data ingestion completed: DataIngestionArtifact(trained_file_path='artifact/12_02_2025_11_32_11/data_ingestion/ingested/train.csv', test_file_path='artifact/12_02_2025_11_32_11/data_ingestion/ingested/test.csv')
+2025-12-02 11:32:14,328 - 17 - root - INFO - Initiate the data ingestion
+2025-12-02 11:32:14,330 - 21 - root - INFO - Initiate the data validation
