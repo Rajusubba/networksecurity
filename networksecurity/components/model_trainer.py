@@ -19,6 +19,9 @@ from sklearn.tree import DecisionTreeClassifier
 from sklearn.ensemble import RandomForestClassifier, GradientBoostingClassifier, AdaBoostClassifier
 import mlflow
 
+import dagshub
+dagshub.init(repo_owner='Rajusubba', repo_name='networksecurity', mlflow=True)
+
 
 class ModelTrainer:
     def __init__(self,
@@ -133,6 +136,8 @@ class ModelTrainer:
                 file_path=self.model_trainer_config.trained_model_file_path,
                 obj=network_model,
             )
+            #save best model separately for deployment purpose
+            save_object("final_models/model.pkl", best_model)
 
             # create and return artifact
             model_trainer_artifact = ModelTrainerArtifact(

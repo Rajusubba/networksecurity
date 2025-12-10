@@ -1,0 +1,43 @@
+2025-12-10 11:23:54,961 - 1025 - httpx - INFO - HTTP Request: POST https://dagshub.com/login/oauth/middleman "HTTP/1.1 200 OK"
+2025-12-10 11:23:55,216 - 1025 - httpx - INFO - HTTP Request: POST https://dagshub.com/login/oauth/access_token "HTTP/1.1 200 OK"
+2025-12-10 11:23:55,448 - 1025 - httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+2025-12-10 11:23:55,452 - 107 - dagshub - INFO - Accessing as Rajusubba
+2025-12-10 11:23:55,718 - 1025 - httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/repos/Rajusubba/networksecurity "HTTP/1.1 200 OK"
+2025-12-10 11:23:55,982 - 1025 - httpx - INFO - HTTP Request: GET https://dagshub.com/api/v1/user "HTTP/1.1 200 OK"
+2025-12-10 11:23:55,985 - 107 - dagshub - INFO - Initialized MLflow to track repo "Rajusubba/networksecurity"
+2025-12-10 11:23:55,986 - 107 - dagshub - INFO - Repository Rajusubba/networksecurity initialized!
+2025-12-10 11:23:55,987 - 25 - root - INFO - Initialized DataIngestion with DB: NetworkSecurity, collection: PhishingData
+2025-12-10 11:23:55,987 - 126 - root - INFO - Starting data ingestion process
+2025-12-10 11:23:55,987 - 41 - root - INFO - Using DB: NetworkSecurity
+2025-12-10 11:23:55,987 - 42 - root - INFO - Using collection: PhishingData
+2025-12-10 11:23:57,737 - 48 - root - INFO - Number of docs fetched from Mongo: 11055
+2025-12-10 11:23:57,795 - 74 - root - INFO - Saving feature-store file to: artifact/12_10_2025_11_23_35/data_ingestion/feature_store/phisingData.csv
+2025-12-10 11:23:57,831 - 97 - root - INFO - Performed train/test split on the dataframe
+2025-12-10 11:23:57,831 - 102 - root - INFO - Exporting train file to: artifact/12_10_2025_11_23_35/data_ingestion/ingested/train.csv
+2025-12-10 11:23:57,831 - 105 - root - INFO - Exporting test file to:  artifact/12_10_2025_11_23_35/data_ingestion/ingested/test.csv
+2025-12-10 11:23:57,862 - 144 - root - INFO - Data ingestion completed: DataIngestionArtifact(trained_file_path='artifact/12_10_2025_11_23_35/data_ingestion/ingested/train.csv', test_file_path='artifact/12_10_2025_11_23_35/data_ingestion/ingested/test.csv')
+2025-12-10 11:23:57,862 - 24 - root - INFO - Initiate the data ingestion
+2025-12-10 11:23:57,865 - 31 - root - INFO - Initialized DataValidation
+2025-12-10 11:23:57,865 - 32 - root - INFO -   Train file: artifact/12_10_2025_11_23_35/data_ingestion/ingested/train.csv
+2025-12-10 11:23:57,865 - 33 - root - INFO -   Test file:  artifact/12_10_2025_11_23_35/data_ingestion/ingested/test.csv
+2025-12-10 11:23:57,865 - 30 - root - INFO - Initiate the data validation
+2025-12-10 11:23:57,865 - 42 - root - INFO - Reading data from: artifact/12_10_2025_11_23_35/data_ingestion/ingested/train.csv
+2025-12-10 11:23:57,872 - 42 - root - INFO - Reading data from: artifact/12_10_2025_11_23_35/data_ingestion/ingested/test.csv
+2025-12-10 11:23:57,875 - 57 - root - INFO - Required number of columns: 31
+2025-12-10 11:23:57,875 - 58 - root - INFO - Dataframe has columns: 31
+2025-12-10 11:23:57,875 - 57 - root - INFO - Required number of columns: 31
+2025-12-10 11:23:57,875 - 58 - root - INFO - Dataframe has columns: 31
+2025-12-10 11:23:57,933 - 95 - root - INFO - Drift report written to: artifact/12_10_2025_11_23_35/data_validation/drift_report/report.yaml
+2025-12-10 11:23:57,971 - 151 - root - INFO - Data validation completed. Artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact/12_10_2025_11_23_35/data_validation/validation/train.csv', valid_test_file_path='artifact/12_10_2025_11_23_35/data_validation/validation/test.csv', invalid_train_file_path='artifact/12_10_2025_11_23_35/data_validation/invalid/train.csv', invalid_test_file_path='artifact/12_10_2025_11_23_35/data_validation/invalid/test.csv', drift_report_file_path='artifact/12_10_2025_11_23_35/data_validation/drift_report/report.yaml')
+2025-12-10 11:23:57,971 - 32 - root - INFO - Data validation completed
+2025-12-10 11:23:57,972 - 46 - root - INFO - Entered the initiate_data_transformation method of Data Transformation class
+2025-12-10 11:23:57,972 - 48 - root - INFO - Starting data transformation
+2025-12-10 11:23:57,982 - 35 - root - INFO - Entered the get_data_transformer_object method of Data Transformation class
+2025-12-10 11:23:57,982 - 38 - root - INFO - Created KNN Imputer object with params: {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+2025-12-10 11:23:57,987 - 43 - root - INFO - Entered the save_object method of Main Utils
+2025-12-10 11:23:57,988 - 47 - root - INFO - Exited the save_object method of Main Utils
+2025-12-10 11:23:57,988 - 40 - root - INFO - Data transformation completed
+2025-12-10 11:23:57,989 - 44 - root - INFO - Model Training sstared
+2025-12-10 11:23:57,989 - 155 - root - INFO - Loading transformed train and test arrays for model training.
+2025-12-10 11:23:57,989 - 54 - root - INFO - Starting model training and model selection.
+2025-12-10 11:26:10,196 - 104 - root - INFO - Best model found: Random Forest with score: 0.8654728366867259
