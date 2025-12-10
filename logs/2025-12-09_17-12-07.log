@@ -1,0 +1,31 @@
+2025-12-09 17:12:08,270 - 25 - root - INFO - Initialized DataIngestion with DB: NetworkSecurity, collection: PhishingData
+2025-12-09 17:12:08,270 - 126 - root - INFO - Starting data ingestion process
+2025-12-09 17:12:08,270 - 41 - root - INFO - Using DB: NetworkSecurity
+2025-12-09 17:12:08,270 - 42 - root - INFO - Using collection: PhishingData
+2025-12-09 17:12:09,973 - 48 - root - INFO - Number of docs fetched from Mongo: 11055
+2025-12-09 17:12:10,025 - 74 - root - INFO - Saving feature-store file to: artifact/12_09_2025_17_12_07/data_ingestion/feature_store/phisingData.csv
+2025-12-09 17:12:10,059 - 97 - root - INFO - Performed train/test split on the dataframe
+2025-12-09 17:12:10,059 - 102 - root - INFO - Exporting train file to: artifact/12_09_2025_17_12_07/data_ingestion/ingested/train.csv
+2025-12-09 17:12:10,059 - 105 - root - INFO - Exporting test file to:  artifact/12_09_2025_17_12_07/data_ingestion/ingested/test.csv
+2025-12-09 17:12:10,094 - 144 - root - INFO - Data ingestion completed: DataIngestionArtifact(trained_file_path='artifact/12_09_2025_17_12_07/data_ingestion/ingested/train.csv', test_file_path='artifact/12_09_2025_17_12_07/data_ingestion/ingested/test.csv')
+2025-12-09 17:12:10,094 - 22 - root - INFO - Initiate the data ingestion
+2025-12-09 17:12:10,097 - 31 - root - INFO - Initialized DataValidation
+2025-12-09 17:12:10,097 - 32 - root - INFO -   Train file: artifact/12_09_2025_17_12_07/data_ingestion/ingested/train.csv
+2025-12-09 17:12:10,097 - 33 - root - INFO -   Test file:  artifact/12_09_2025_17_12_07/data_ingestion/ingested/test.csv
+2025-12-09 17:12:10,097 - 28 - root - INFO - Initiate the data validation
+2025-12-09 17:12:10,097 - 42 - root - INFO - Reading data from: artifact/12_09_2025_17_12_07/data_ingestion/ingested/train.csv
+2025-12-09 17:12:10,104 - 42 - root - INFO - Reading data from: artifact/12_09_2025_17_12_07/data_ingestion/ingested/test.csv
+2025-12-09 17:12:10,106 - 57 - root - INFO - Required number of columns: 31
+2025-12-09 17:12:10,106 - 58 - root - INFO - Dataframe has columns: 31
+2025-12-09 17:12:10,107 - 57 - root - INFO - Required number of columns: 31
+2025-12-09 17:12:10,107 - 58 - root - INFO - Dataframe has columns: 31
+2025-12-09 17:12:10,156 - 95 - root - INFO - Drift report written to: artifact/12_09_2025_17_12_07/data_validation/drift_report/report.yaml
+2025-12-09 17:12:10,188 - 151 - root - INFO - Data validation completed. Artifact: DataValidationArtifact(validation_status=True, valid_train_file_path='artifact/12_09_2025_17_12_07/data_validation/validation/train.csv', valid_test_file_path='artifact/12_09_2025_17_12_07/data_validation/validation/test.csv', invalid_train_file_path='artifact/12_09_2025_17_12_07/data_validation/invalid/train.csv', invalid_test_file_path='artifact/12_09_2025_17_12_07/data_validation/invalid/test.csv', drift_report_file_path='artifact/12_09_2025_17_12_07/data_validation/drift_report/report.yaml')
+2025-12-09 17:12:10,188 - 30 - root - INFO - Data validation completed
+2025-12-09 17:12:10,188 - 46 - root - INFO - Entered the initiate_data_transformation method of Data Transformation class
+2025-12-09 17:12:10,188 - 48 - root - INFO - Starting data transformation
+2025-12-09 17:12:10,199 - 35 - root - INFO - Entered the get_data_transformer_object method of Data Transformation class
+2025-12-09 17:12:10,199 - 38 - root - INFO - Created KNN Imputer object with params: {'missing_values': nan, 'n_neighbors': 3, 'weights': 'uniform'}
+2025-12-09 17:12:10,203 - 41 - root - INFO - Entered the save_object method of Main Utils
+2025-12-09 17:12:10,205 - 45 - root - INFO - Exited the save_object method of Main Utils
+2025-12-09 17:12:10,205 - 38 - root - INFO - Data transformation completed
