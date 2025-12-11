@@ -33,17 +33,28 @@ class ModelTrainer:
         except Exception as e:
             raise NetworkSecurityException(e, sys)
         
-    def track_mlflow(self, best_model, classificationmetric):
+    def track_mlflow(self, best_model, train_metric, test_metric):
+        """
+        Log train & test metrics to MLflow (via DagsHub).
+        We intentionally do NOT log the model with mlflow.sklearn.log_model
+        because DagsHub's MLflow server does not support the new logged-model
+        endpoint used by MLflow 3.x.
+        """
         with mlflow.start_run():
-            f1_score = classificationmetric.f1_score
-            precision_score = classificationmetric.precision_score
-            recall_score = classificationmetric.recall_score
-            
-            mlflow.log_metric("f1_score", f1_score)
-            mlflow.log_metric("precision_score", precision_score)
-            mlflow.log_metric("recall_score", recall_score)
-            mlflow.sklearn.log_model(best_model, "model")
-            logging.info("Model logged in mlflow")
+            # Train metrics
+            mlflow.log_metric("train_f1_score", train_metric.f1_score)
+            mlflow.log_metric("train_precision_score", train_metric.precision_score)
+            mlflow.log_metric("train_recall_score", train_metric.recall_score)
+
+            # Test metrics
+            mlflow.log_metric("test_f1_score", test_metric.f1_score)
+            mlflow.log_metric("test_precision_score", test_metric.precision_score)
+            mlflow.log_metric("test_recall_score", test_metric.recall_score)
+
+            # ❌ DO NOT DO THIS with DagsHub + MLflow 3.x
+            # mlflow.sklearn.log_model(best_model, "model")
+
+            logging.info("Train & test metrics logged to MLflow (model not logged).")
 
     def train_model(self, x_train, y_train, x_test, y_test) -> ModelTrainerArtifact:
         """
@@ -110,7 +121,7 @@ class ModelTrainer:
                 y_true=y_train, y_pred=y_train_pred
             )
             ##Tracking test metrics on mlflow
-            self.track_mlflow(best_model,classification_train_metric)
+    
             
             
             
@@ -118,7 +129,7 @@ class ModelTrainer:
             classification_test_metric = get_classification_score(
                 y_true=y_test, y_pred=y_test_pred
             )
-            self.track_mlflow(best_model,classification_test_metric)   
+            self.track_mlflow(best_model, classification_train_metric, classification_test_metric)
             # load preprocessor
             preprocessor = load_object(
                 file_path=self.data_transformation_artifact.transformed_object_file_path
