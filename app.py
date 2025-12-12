@@ -5,6 +5,7 @@ import pymongo
 import certifi
 import pandas as pd
 from dotenv import load_dotenv
+from uvicorn import run as app_run
 
 from fastapi import FastAPI, HTTPException, UploadFile, File
 from fastapi.middleware.cors import CORSMiddleware
